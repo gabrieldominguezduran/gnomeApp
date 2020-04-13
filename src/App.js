@@ -1,26 +1,61 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Header from "./components/Header";
+import Listing from "./components/Listing";
+import "./index.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      modules: [],
+    };
+  }
+
+  componentDidMount() {
+    const url =
+      "https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json";
+
+      fetch(url)
+      .then(response => response.json())
+      .then(responseJson => {
+        let values = [];
+
+        responseJson.Brastlewark.map(data => {
+          
+          return(
+          values.push({
+            id: data.id,
+            photo: data.thumbnail,
+            name: data.name,
+            job: data.professions[0],
+            age: data.age,
+            weight: data.weight,
+            height: data.height,
+            friends: data.friends,
+            hair_color: data.hair_color,
+          }))
+        });
+
+        this.setState({
+          modules: values,
+        });
+      })
+      
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  render() {
+    return (
+      <div>
+        <Header />
+        <Listing modules={this.state.modules} />
+      </div>
+    );
+  }
 }
 
 export default App;
