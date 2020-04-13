@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   margin-left: 5%;
-`
+`;
 
 const Div = styled.div`
   display: flex;
@@ -26,7 +26,7 @@ const H2 = styled.h2`
   text-align: center;
   font-size: 2.5rem;
   margin: 3rem;
-`
+`;
 
 class Listing extends Component {
   constructor(props) {
@@ -66,28 +66,24 @@ class Listing extends Component {
     });
 
     return (
-     
-        <Container>
-          <div>
-            <H2>Search by:</H2>
-            <form>
-              <Div>
-               
-                <Input
-                  type="text"
-                  placeholder="Job or Name"
-                  className="form-control"
-                  value={this.state.searchGnome}
-                  onChange={this.updateSearchGnome.bind(this)}
-                />
-               
-              </Div>
-            </form>
-            <H2>Gnomes</H2>
-          </div>
-          {items}
-        </Container>
-  
+      <Container>
+        <div>
+          <H2>Search by:</H2>
+          <form>
+            <Div>
+              <Input
+                type="text"
+                placeholder="Job or Name"
+                className="form-control"
+                value={this.state.searchGnome}
+                onChange={this.updateSearchGnome.bind(this)}
+              />
+            </Div>
+          </form>
+          <H2>Gnomes</H2>
+        </div>
+        {items}
+      </Container>
     );
   }
 }

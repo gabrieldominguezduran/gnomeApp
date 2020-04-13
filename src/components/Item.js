@@ -7,7 +7,7 @@ const Container = styled.div`
 
 const Img = styled.img`
   width: 100%;
-`
+`;
 
 const H4 = styled.h4`
   font-size: 2rem;
@@ -28,12 +28,16 @@ const Item = (props) => {
     <Container>
       <Div>
         <Img src={props.photo} alt="Thumbnail" />
-          <H4 >{props.name}</H4>
-          <P >
-           Job: {props.job || " On sabbatical ;)"} <br />He is {props.age} Old <br />Weight: {props.weight} Grams
-             <br />Size: {props.height} Cms <br /> Hair color: {props.hair} <br /> Friends: {props.friends.join(", ") || " Don't have any :("}
-          </P>
-        </Div>
+        <H4>{props.name}</H4>
+        <P>
+          Job: {props.job || " On sabbatical ;)"} <br />
+          Age: {props.age} years old <br />
+          Weight: {Math.floor(props.weight)} Kg
+          <br />
+          Size: {Math.floor(props.height)} Cms <br /> Hair: {props.hair} <br />{" "}
+          Friends: {props.friends.join(", ") || " Don't have any :("}
+        </P>
+      </Div>
     </Container>
   );
 };

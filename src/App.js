@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import Listing from "./components/Listing";
 import "./index.css";
 
-
 class App extends Component {
   constructor() {
     super();
@@ -17,15 +16,13 @@ class App extends Component {
     const url =
       "https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json";
 
-      fetch(url)
-      .then(response => response.json())
-      .then(responseJson => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((responseJson) => {
         let values = [];
 
-        responseJson.Brastlewark.map(data => {
-          
-          return(
-          values.push({
+        responseJson.Brastlewark.map((data) => {
+          return values.push({
             id: data.id,
             photo: data.thumbnail,
             name: data.name,
@@ -35,15 +32,15 @@ class App extends Component {
             height: data.height,
             friends: data.friends,
             hair_color: data.hair_color,
-          }))
+          });
         });
 
         this.setState({
           modules: values,
         });
       })
-      
-      .catch(error => {
+
+      .catch((error) => {
         console.log(error);
       });
   }
