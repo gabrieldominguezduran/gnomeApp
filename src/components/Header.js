@@ -10,6 +10,7 @@ const Section = styled.section`
   width: 80vw;
   heigth: auto;
   margin: auto;
+  border-radius: 10px;
 `;
 
 const Title = styled.div`

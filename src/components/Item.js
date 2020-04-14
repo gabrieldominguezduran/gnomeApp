@@ -9,11 +9,13 @@ const Img = styled.img`
   width: 100%;
 `;
 
-const H4 = styled.h4`
-  font-size: 2rem;
+const H2 = styled.h2`
+  font-size: 1.5rem;
+  padding: 8px;
 `;
 const P = styled.p`
   font-size: 1rem;
+  padding: 5px;
 `;
 const Div = styled.div`
   background-color: rgba(35, 35, 28, 0.8);
@@ -23,19 +25,25 @@ const Div = styled.div`
   padding: 1rem;
   border-radius: 10px;
 `;
+
+const Span = styled.span`
+  color: #d13c3f;
+`;
+
 const Item = (props) => {
   return (
     <Container>
       <Div>
         <Img src={props.photo} alt="Thumbnail" />
-        <H4>{props.name}</H4>
+        <H2>{props.name}</H2>
         <P>
-          Job: {props.job || " On sabbatical ;)"} <br />
-          Age: {props.age} years old <br />
-          Weight: {Math.floor(props.weight)} Kg
+          <Span>Job:</Span> {props.job || " On sabbatical ;)"} <br />
+          <Span>Age:</Span> {props.age} years old <br />
+          <Span>Weight:</Span> {Math.floor(props.weight)} Kg
           <br />
-          Size: {Math.floor(props.height)} Cms <br /> Hair: {props.hair} <br />{" "}
-          Friends: {props.friends.join(", ") || " Don't have any :("}
+          <Span>Size:</Span> {Math.floor(props.height)} Cms <br />{" "}
+          <Span>Hair:</Span> {props.hair} <br /> <Span>Friends:</Span>{" "}
+          {props.friends.join(", ") || " Don't have any :("}
         </P>
       </Div>
     </Container>

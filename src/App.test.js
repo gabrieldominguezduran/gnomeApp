@@ -1,11 +1,19 @@
-import React from 'react';
+import React from 'react'
+import ReactDOM from 'react-dom'
 import App from './App';
 
-
-it("Fetch call testing", async function() {
-  const responseJson = new App()
-  console.warn(responseJson.componentDidMount());
-
-  expect("hello").toEqual("hello")
+describe("Render App", () => {
+  test("Render without crashing", () => {
+    const div = document.createElement('div')
+    ReactDOM.render(<App />, div)
   
 })
+
+  
+})
+
+
+
+
+
+

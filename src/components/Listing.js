@@ -20,6 +20,12 @@ const Input = styled.input`
   font-size: 2.5rem;
   text-align: center;
   color: black;
+  background-color: rgb(158, 141, 119);
+
+  ::placeholder{
+    color: black;
+    font-family: "Acme", sans-serif;
+  }
 `;
 
 const H2 = styled.h2`
