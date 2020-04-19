@@ -1,6 +1,6 @@
 ## React app with a fetch call to a external api
 
-This a game role mocks up up where you can find cards with different descriptions and filtered for a job or name.
+This is a game role mocks up up where you can find cards with different descriptions and filtered for a job or name.
 Clone project and install dependencies.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
